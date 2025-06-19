@@ -1,24 +1,28 @@
-# 1. Temel imaj olarak OpenJDK 17 kullan
 FROM openjdk:17-jdk-slim
 
-# 2. Çalışma dizinini ayarla
 WORKDIR /app
 
-# 3. Bağımlılıkların daha hızlı kurulması için pom.xml ve mvnw dosyalarını kopyala
+# 1. mvnw ve pom.xml'i kopyala
 COPY mvnw .
-COPY .mvn .mvn
 COPY pom.xml .
 
+# 2. mvnw'ye çalıştırma izni ver
 RUN chmod +x mvnw
 
-# 4. Maven bağımlılıklarını indir (önbelleğe alınır)
+# 3. .mvn klasörünü kopyala (önceki COPY'de .mvn sonradan gelirse chmod bozulur)
+COPY .mvn .mvn
+
+# 4. Bağımlılıkları indir
 RUN ./mvnw dependency:resolve
 
-# 5. Uygulama kaynaklarını kopyala
+# 5. Projenin tamamını kopyala
 COPY . .
 
-# 6. Uygulama build edilir
+# 6. Tekrar emin ol çalıştırılabilirlik bozulduysa
+RUN chmod +x mvnw
+
+# 7. Build
 RUN ./mvnw clean package -DskipTests
 
-# 7. Uygulama çalıştırılır
+# 8. Uygulama başlat
 CMD ["java", "-jar", "target/erasmus-0.0.1-SNAPSHOT.jar"]
