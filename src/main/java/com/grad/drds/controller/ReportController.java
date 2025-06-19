@@ -149,7 +149,7 @@ public class ReportController {
 	    HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);
 	    
 	    @SuppressWarnings("rawtypes")
-		ResponseEntity<Map> response = restTemplate.postForEntity("http://localhost:5000/predict", requestEntity, Map.class);
+		ResponseEntity<Map> response = restTemplate.postForEntity("https://flask-api-keras.onrender.com/predict", requestEntity, Map.class);
 	    
 	    return response.getBody();
 	}
