@@ -25,4 +25,4 @@ RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
 # 8. Uygulama başlat
-CMD ["java", "-jar", "target/erasmus-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/drds-0.0.1-SNAPSHOT.jar"]
