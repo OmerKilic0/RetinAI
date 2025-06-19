@@ -9,6 +9,8 @@ COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
 
+RUN chmod +x mvnw
+
 # 4. Maven bağımlılıklarını indir (önbelleğe alınır)
 RUN ./mvnw dependency:resolve
 
