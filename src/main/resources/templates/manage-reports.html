@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>RetinAI - Manage Reports</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Main CSS File -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+    <style>
+    body {
+      background-color: #f4f6fb;
+      font-family: 'Poppins', sans-serif;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 600;
+      color: #1b2a4e;
+      margin-bottom: 12px;
+    }
+    .table-wrapper {
+      background: #ffffff;
+      padding: 20px 24px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    .custom-table thead tr {
+      background-color: #1977cc;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .custom-table thead th {
+      padding: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #444;
+    }
+    .custom-table thead input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      background-color: #fefefe;
+      color: #333;
+      transition: border 0.2s;
+    }
+    .custom-table thead input:focus {
+      outline: none;
+      border-color: #999;
+    }
+    .custom-table tbody tr {
+      border-bottom: 1px solid #e1e4e8;
+      transition: background-color 0.2s ease-in-out;
+    }
+    .custom-table tbody tr:hover {
+      background-color: #f5f9ff;
+    }
+    .custom-table tbody td {
+      padding: 12px;
+      font-size: 15px;
+      color: #333;
+      vertical-align: middle;
+      border-bottom: 1px solid #eee;
+    }
+    .delete-button {
+      border: 1px solid #dc3545;
+      color: #dc3545;
+      background: transparent;
+      border-radius: 6px;
+      padding: 6px 10px;
+      transition: all 0.2s ease-in-out;
+    }
+    .delete-button:hover {
+      background-color: #dc3545;
+      color: white;
+    }
+    .custom-table thead th:last-child {
+      text-indent: -9999px;
+    }
+    .table-container {
+      margin-top: 8px;
+    }
+    .table-wrapper {
+  max-height: 50vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+}
+
+/* Scrollbar içeri girdiğinde köşeler düzgün görünmesi için */
+.table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+	#hero {
+	  position: relative;
+	  height: auto;
+	  min-height: 90vh;
+	  overflow: hidden;
+	}
+	#hero img {
+	  position: absolute;
+	  top: 80;
+	  left: 0;
+	  height: 100%;
+	  max-height: 100vh;
+	  width: 100%;
+	  object-fit: cover;
+	}
+  </style>
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header sticky-top">
+
+        <div class="topbar d-flex align-items-center">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+                <div class="contact-info d-flex align-items-center">
+                    <i class="bi bi-envelope d-flex align-items-center"><a
+                            href="mailto:info@example.com">info@example.com</a></i>
+                    <i class="bi bi-phone d-flex align-items-center ms-4"><span>+90 312 233 10 00</span></i>
+                </div>
+                <div class="social-links d-none d-md-flex align-items-center">
+                    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div><!-- End Top Bar -->
+
+        <div class="branding d-flex align-items-center">
+
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+                <a href="/" class="logo d-flex align-items-center me-auto">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.png" alt=""> -->
+                    <h1 class="sitename fs-1" style="background-color: white;">RetinAI</h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+
+                <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; min-width: 210px; max-width: 210px; text-align: center;" href="manage-users">Manage Users</a>
+		  <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; text-align:center; min-width: 210px; max-width: 200px;" href="manage-reports">Manage Reports</a>
+		
+		  <form th:action="@{/logout}" method="post" style="margin:0;">
+		    <button type="submit" class="cta-btn d-none d-sm-block"
+		            style="font-size:16px; text-align:center; min-width: 200px; max-width: 200px; border: none;">
+		      Log Out
+		    </button>
+		  </form>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="main">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero section light-background" style="align-items: flex-start;">
+			<img src="/images/admin-bg.jpg" alt="background">
+			<div class="container py-5">
+			  <h2 class="section-title">Manage Reports</h2>
+			
+			  <div class="table-wrapper table-container">
+			    <table class="custom-table">
+			      <thead>
+                        <tr>
+                            <th><input style="margin-bottom: 0;" type="text" class="form-control" placeholder="Name">
+                            </th>
+                            <th><input style="margin-bottom: 0;" type="text" class="form-control" placeholder="Surname">
+                            </th>
+                            <th><input style="margin-bottom: 0;" type="text" class="form-control" placeholder="TCKN">
+                            </th>
+                            <th><input style="margin-bottom: 0;" type="text" class="form-control" placeholder="Request Date">
+                            </th>
+                            <th><input style="margin-bottom: 0;" type="text" class="form-control" placeholder="AI Result">
+                            </th>
+                            <th style="padding-bottom: 15px; text-align: center;">Manage</th>
+                        </tr>
+                    </thead>
+                   <tbody>
+					  <tr th:each="report : ${reports}">
+					    <td th:text="${report.patientName}">Name</td>
+					    <td th:text="${report.patientSurname}">Surname</td>
+					    <td th:text="${report.patientTckn}">TCKN</td>
+					    <td th:text="${#dates.format(report.requestDate, 'yyyy-MM-dd HH:mm')}">Request Date</td>
+					    <td th:text="${report.result}">AI Result</td>
+					    <td style="text-align: center;">
+					      <form th:action="@{'/admin/delete-report/' + ${report.id}}" method="post" style="display:inline;">
+					        <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Are you sure?')">
+					          <i class="bi bi-trash"></i>
+					        </button>
+					      </form>
+					    </td>
+					  </tr>
+					</tbody>
+			    </table>
+			  </div>
+			</div>
+                </table>
+
+            </div>
+        </section><!-- /Hero Section -->
+    </main>
+
+    <footer id="footer" class="footer light-background">
+
+        <div class="container footer-top">
+            <div class="row gy-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="/" class="logo d-flex align-items-center">
+                        <span class="sitename">RetinAI</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p style="font-size: 16px;"><strong>Central Campus</strong></p>
+                        <p style="font-family: 'Roboto';">Eskişehir Yolu 29. Km.</p>
+                        <p style="font-family: 'Roboto';">Yukarıyurtçu Mahallesi</p>
+                        <p style="font-family: 'Roboto';">Mimar Sinan Caddesi No:4</p>
+                        <p style="font-family: 'Roboto';">06815, Etimesgut/ANKARA</p>
+                        <p style="font-family: 'Roboto';" class="mt-3"><strong>Phone:</strong> <span>0 312 233 10
+                                00</span></p>
+                        <p style="font-family: 'Roboto';"><strong>Email:</strong> <span>info@example.com</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a class="logo d-flex align-items-center">
+                        <span class="sitename"><br></span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p style="font-size: 16px;"><strong>Balgat Campus</strong></p>
+                        <p style="font-family: 'Roboto';">Çukurambar Mah.</p>
+                        <p style="font-family: 'Roboto';">Öğretmenler Cad. No:14</p>
+                        <p style="font-family: 'Roboto';">06530, Çankaya/ANKARA</p>
+                        <p style="font-family: 'Roboto';" class="mt-3"><strong>Phone:</strong> <span>0 312 284 45
+                                00</span></p>
+                        <p style="font-family: 'Roboto';"><strong>Fax:</strong> <span>0 312 286 40
+                                78</span></p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <br><br><br>
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="detection">Detect DR</a></li>
+                        <li><a href="reports">Previous Detections</a></li>
+                        <li><a href="admin">Manage Users</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">RetinAI</strong> <span>All Rights Reserved</span>
+            </p>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="/assets/js/main.js"></script>
+    <script>
+	  document.addEventListener("DOMContentLoaded", function () {
+	    const inputs = document.querySelectorAll("thead input");
+	    const rows = document.querySelectorAll("tbody tr");
+	
+	    inputs.forEach((input, index) => {
+	      input.addEventListener("input", function () {
+	        const filters = Array.from(inputs).map(input => input.value.toLowerCase());
+	
+	        rows.forEach(row => {
+	          const cells = row.querySelectorAll("td");
+	          let visible = true;
+	
+	          filters.forEach((filter, i) => {
+	            const cellText = cells[i].textContent.toLowerCase();
+	            if (!cellText.includes(filter)) {
+	              visible = false;
+	            }
+	          });
+	
+	          row.style.display = visible ? "" : "none";
+	        });
+	      });
+	    });
+	  });
+	</script>
+</body>
+
+</html>

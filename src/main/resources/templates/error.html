@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" th:href="@{/assets/vendor/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="alert alert-danger text-center">
+        <h4 class="alert-heading">Access Denied</h4>
+        <p th:text="${errorMessage} ?: 'An unexpected error occurred.'"></p>
+        <a href="/" class="btn btn-primary mt-3">Go to Homepage</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>RetinAI - DR Detection</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    #previewContainer img {
+      position: relative;
+      max-height: 100px;
+      max-width: 100px;
+      inset: inherit;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@example.com">info@example.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+90 312 233 10 00</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="/" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1 class="sitename fs-1">RetinAI</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+
+        <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; min-width: 210px; max-width: 210px; text-align: center;" href="detection">Detect DR</a>
+		  <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; text-align:center; min-width: 240px; max-width: 240px;" href="reports">Previous Detections</a>
+		  <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; text-align:center; min-width: 210px; max-width: 200px;" href="profile">Profile</a>
+		
+		  <form th:action="@{/logout}" method="post" style="margin:0;">
+		    <button type="submit" class="cta-btn d-none d-sm-block"
+		            style="font-size:16px; text-align:center; min-width: 200px; max-width: 200px; border: none;">
+		      Log Out
+		    </button>
+		  </form>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <img src="/assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative">
+
+        <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+          <h2 style="font-size: 36px;">Detect Diabetic Retinopathy</h2>
+        </div><!-- End Welcome -->
+
+        <div class="content row gy-4 justify-content-start" style="margin-top: 20px;">
+
+          <div class="icon-box" data-aos="zoom-out" data-aos-delay="500"
+            style="padding: 40px 30px; max-width: 600px; text-align: start; background-color: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <h3 class="mb-4" style="color: #124265; font-weight: 600;">User Information Form</h3>
+            <form id="reportForm" method="post" enctype="multipart/form-data" action="/submit">
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="patientType" id="myself" value="self" checked>
+                <label class="form-check-label me-3" for="myself">Myself</label>
+              </div>
+              <div class="form-check form-check-inline mb-3">
+                <input class="form-check-input" type="radio" name="patientType" id="other" value="other">
+                <label class="form-check-label" for="other">Someone Else</label>
+              </div>
+			  <input type="hidden" name="patientName" id="finalPatientName">
+			  <input type="hidden" name="patientSurname" id="finalPatientSurname">
+			  <input type="hidden" name="patientTckn" id="finalPatientTckn">
+              <div id="otherPatientInfo" class="mb-3" style="display: none;">
+                <input type="text" name="otherPatientName" placeholder="Name" class="form-control mb-2" required>
+                <input type="text" name="otherPatientSurname" placeholder="Surname" class="form-control mb-2" required>
+                <input type="text" name="otherPatientTckn" placeholder="TCKN" class="form-control" required>
+              </div>
+              <div id="currentUserInfo" class="mb-3">
+			    <input type="text" name="currentName" class="form-control mb-2" th:value="${currentUser.name}" readonly>
+			    <input type="text" name="currentSurname" class="form-control mb-2" th:value="${currentUser.surname}" readonly>
+			    <input type="text" name="currentTckn" class="form-control" th:value="${currentUser.tckn}" readonly>
+			  </div>
+
+              <h5 class="mt-4" style="color: #124265; font-weight: 600;">Upload Images (Max 3)</h5>
+              <p style="font-size: 0.95rem; color: #5f6f81;">You can upload images up to 3 times. Format must be
+                JPG/PNG. File size cannot exceed 20MB.</p>
+
+              <div class="mb-3 text-center p-4 justify-content-center"
+                style="background-color: #f6f9fc; border: 2px dashed #1977cc; border-radius: 10px;">
+
+                <img style="opacity: 0.55; position: relative; max-height: 100px; max-width: 100px; display: inline;"
+                  src="/images/upload-icon.png" alt="Upload Icon">
+
+                <p style="margin-bottom: 8px; color: #124265;">Drag your images here or select from your device.</p>
+
+                <input type="file" id="imageUpload" name="images" accept="image/*" multiple class="form-control">
+              </div>
+
+              <div id="previewContainer" style="position: relative;"
+                class="d-flex justify-content-center mb-3 flex-wrap"></div>
+
+              <button type="submit" class="btn w-100"
+                style="background-color: #1977cc; color: white; font-weight: 600;">Submit</button>
+            </form>
+
+          </div>
+
+
+        </div><!-- End Content -->
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4 justify-content-center">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="/" class="logo d-flex align-items-center">
+            <span class="sitename">RetinAI</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p style="font-size: 16px;"><strong>Central Campus</strong></p>
+            <p style="font-family: 'Roboto';">Eskişehir Yolu 29. Km.</p>
+            <p style="font-family: 'Roboto';">Yukarıyurtçu Mahallesi</p>
+            <p style="font-family: 'Roboto';">Mimar Sinan Caddesi No:4</p>
+            <p style="font-family: 'Roboto';">06815, Etimesgut/ANKARA</p>
+            <p style="font-family: 'Roboto';" class="mt-3"><strong>Phone:</strong> <span>0 312 233 10
+                00</span></p>
+            <p style="font-family: 'Roboto';"><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a class="logo d-flex align-items-center">
+            <span class="sitename"><br></span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p style="font-size: 16px;"><strong>Balgat Campus</strong></p>
+            <p style="font-family: 'Roboto';">Çukurambar Mah.</p>
+            <p style="font-family: 'Roboto';">Öğretmenler Cad. No:14</p>
+            <p style="font-family: 'Roboto';">06530, Çankaya/ANKARA</p>
+            <p style="font-family: 'Roboto';" class="mt-3"><strong>Phone:</strong> <span>0 312 284 45
+                00</span></p>
+            <p style="font-family: 'Roboto';"><strong>Fax:</strong> <span>0 312 286 40
+                78</span></p>
+
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <br><br><br>
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="detection">Detect DR</a></li>
+            <li><a href="reports">Previous Detections</a></li>
+            <li><a href="profile">Profile</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">RetinAI</strong> <span>All Rights Reserved</span>
+      </p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+<script>
+  $(document).ready(function () {
+    function togglePatientInfo() {
+      const patientType = $('input[name="patientType"]:checked').val();
+
+      if (patientType === 'self') {
+        $('#currentUserInfo').slideDown();
+        $('#otherPatientInfo').slideUp();
+        $('#otherPatientInfo input').prop('required', false);
+      } else {
+        $('#currentUserInfo').slideUp();
+        $('#otherPatientInfo').slideDown();
+        $('#otherPatientInfo input').prop('required', true);
+      }
+    }
+
+    togglePatientInfo();
+    $('input[name="patientType"]').change(togglePatientInfo);
+
+    // Form submit olduğunda doğru inputları gizli alanlara kopyala
+    $('#reportForm').submit(function () {
+      const type = $('input[name="patientType"]:checked').val();
+
+      if (type === 'self') {
+        $('#finalPatientName').val($('input[name="currentName"]').val());
+        $('#finalPatientSurname').val($('input[name="currentSurname"]').val());
+        $('#finalPatientTckn').val($('input[name="currentTckn"]').val());
+      } else {
+        $('#finalPatientName').val($('#otherPatientInfo input[name="otherPatientName"]').val());
+        $('#finalPatientSurname').val($('#otherPatientInfo input[name="otherPatientSurname"]').val());
+        $('#finalPatientTckn').val($('#otherPatientInfo input[name="otherPatientTckn"]').val());
+      }
+    });
+
+    // Görsel önizleme
+    $("#imageUpload").change(function () {
+      const files = this.files;
+      const previewContainer = $("#previewContainer");
+      previewContainer.html("");
+
+      if (files.length > 3) {
+        alert("You can only upload up to 3 images.");
+        this.value = "";
+        return;
+      }
+
+      for (let i = 0; i < files.length; i++) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          $("<img>")
+            .attr("src", e.target.result)
+            .addClass("img-thumbnail m-2")
+            .css("width", "100px")
+            .appendTo(previewContainer);
+        };
+        reader.readAsDataURL(files[i]);
+      }
+    });
+  });
+</script>
+</body>
+
+</html>

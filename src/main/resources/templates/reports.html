@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>RetinAI - Previous Reports</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+    <style>
+        input {
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            font-size: 16px;
+            min-height: 48px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .filter-button {
+            background-color: #1977cc;
+            border: none;
+            padding: 10px 20px;
+            align-items: center;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+        }
+
+        .filter-submit {
+            margin: 0 0 8px 30px;
+            background-color: #1977cc;
+            /* Orta mavi filtre gönder */
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        a:link,
+        a:visited {
+
+            /* Açık mavi link */
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+
+        .view-button,
+        .download-button {
+            background-color: #1977cc;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        th {
+            background-color: #1977cc;
+            color: white;
+            font-weight: normal;
+        }
+
+        td img {
+            width: 80px;
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .table-wrapper {
+	  max-height: 50vh;
+	  overflow-y: auto;
+	  border-radius: 16px;
+	  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+	  background: #ffffff;
+	}
+	
+	/* Scrollbar içeri girdiğinde köşeler düzgün görünmesi için */
+	.table-wrapper::-webkit-scrollbar {
+	  width: 8px;
+	}
+	.table-wrapper::-webkit-scrollbar-thumb {
+	  background: rgba(0,0,0,0.1);
+	  border-radius: 8px;
+	}
+	#hero {
+	  position: relative;
+	  height: auto;
+	  min-height: 80vh;
+	  overflow: hidden;
+	}
+	#hero img {
+	  position: absolute;
+	  top: 80;
+	  left: 0;
+	  height: 100%;
+	  max-height: 100vh;
+	  width: 100%;
+	  object-fit: cover;
+	}
+    </style>
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header sticky-top">
+
+        <div class="topbar d-flex align-items-center">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+                <div class="contact-info d-flex align-items-center">
+                    <i class="bi bi-envelope d-flex align-items-center"><a
+                            href="mailto:info@example.com">info@example.com</a></i>
+                    <i class="bi bi-phone d-flex align-items-center ms-4"><span>+90 312 233 10 00</span></i>
+                </div>
+                <div class="social-links d-none d-md-flex align-items-center">
+                    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div><!-- End Top Bar -->
+
+        <div class="branding d-flex align-items-center">
+
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+                <a href="/" class="logo d-flex align-items-center me-auto">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.png" alt=""> -->
+                    <h1 class="sitename fs-1" style="background-color: white;">RetinAI</h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+
+                <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; min-width: 210px; max-width: 210px; text-align: center;" href="detection">Detect DR</a>
+		  <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; text-align:center; min-width: 240px; max-width: 240px;" href="reports">Previous Detections</a>
+		  <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; text-align:center; min-width: 210px; max-width: 200px;" href="profile">Profile</a>
+		
+		  <form th:action="@{/logout}" method="post" style="margin:0;">
+		    <button type="submit" class="cta-btn d-none d-sm-block"
+		            style="font-size:16px; text-align:center; min-width: 200px; max-width: 200px; border: none;">
+		      Log Out
+		    </button>
+		  </form>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="main">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero section light-background" style="align-items: flex-start;">
+
+            <img src="/images/table-bg.jpg" alt="" data-aos="fade-in">
+
+            <div class="container">
+                <div class="report-header">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="display: inline-block; margin: 10px 0 15px 0; font-size: 36px; font-weight: bold;">
+                            Previous
+                            Reports</h3>
+                        <div style="display: inline-flex; justify-content: flex-end; text-align: center;">
+                            <button class="filter-button">☰ Filter By ▼</button>
+
+                        </div>
+                    </div>
+                    <div id="filter-contents" style="display: none;">
+                        <form method="get" action="/reports">
+                            <label for="patientName">Patient Name:</label> <input type="text" id="patientName"
+                                name="patientName" value="" />
+
+                            <label for="startDate">Start Date:</label> <input type="date" id="startDate"
+                                name="startDate" value="${param.startDate}" /> <label for="endDate">End
+                                Date:</label> <input type="date" id="endDate" name="endDate" value="${param.endDate}" />
+
+                            <button class="filter-submit" type="submit">Filter</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+	                <table>
+	                    <thead>
+	                        <tr>
+	                            <th>Patient Name</th>
+	                            <th>Patient Surname</th>
+	                            <th>Patient TCKN</th>
+	                            <th>Request Date</th>
+	                            <th>AI Result</th>
+	                            <th>PDF Report</th>
+	                            <th>Details</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody>
+						    <tr th:if="${#lists.isEmpty(reports)}">
+						        <td colspan="7">No reports available</td>
+						    </tr>
+						
+						    <tr th:each="report : ${reports}">
+						        <td th:text="${report.patientName}">Name</td>
+						        <td th:text="${report.patientSurname}">Surname</td>
+						        <td th:text="${report.patientTckn}">TCKN</td>
+						        <td th:text="${#dates.format(report.requestDate, 'dd-MM-yyyy')}">Date</td>
+						        <td>
+						            <span th:if="${report.result == 'No DR'}">DR not detected</span>
+						            <span th:if="${report.result == 'DR'}">DR detected</span>
+						        </td>
+						        <td>
+								    <button class="download-button" th:onclick="'downloadPDF(' + ${report.id} + ')'">📥 Download as PDF</button>
+								</td>
+						        <td>
+						            <a th:href="@{/reports/{id}(id=${report.id})}">
+						                <button class="view-button">View Report</button>
+						            </a>
+						        </td>
+						    </tr>
+						</tbody>
+	                </table>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    $(".filter-button").click(function () {
+                        $("#filter-contents").slideToggle();
+                    });
+                })
+                function downloadPDF(reportId) {
+                    fetch('/generate-pdf', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ reportId: reportId }) // Sadece ID gönderiyoruz
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error("PDF generation failed");
+                            }
+                            return response.blob();
+                        })
+                        .then(blob => {
+                            let link = document.createElement('a');
+                            link.href = window.URL.createObjectURL(blob);
+                            link.download = "Retina_Report.pdf";
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        })
+                        .catch(error => console.error('Error:', error));
+                }
+            </script>
+
+        </section><!-- /Hero Section -->
+    </main>
+
+    <footer id="footer" class="footer light-background">
+
+        <div class="container footer-top">
+            <div class="row gy-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="/" class="logo d-flex align-items-center">
+                        <span class="sitename">RetinAI</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p style="font-size: 16px;"><strong>Central Campus</strong></p>
+                        <p style="font-family: 'Roboto';">Eskişehir Yolu 29. Km.</p>
+                        <p style="font-family: 'Roboto';">Yukarıyurtçu Mahallesi</p>
+                        <p style="font-family: 'Roboto';">Mimar Sinan Caddesi No:4</p>
+                        <p style="font-family: 'Roboto';">06815, Etimesgut/ANKARA</p>
+                        <p style="font-family: 'Roboto';" class="mt-3"><strong>Phone:</strong> <span>0 312 233 10
+                                00</span></p>
+                        <p style="font-family: 'Roboto';"><strong>Email:</strong> <span>info@example.com</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a class="logo d-flex align-items-center">
+                        <span class="sitename"><br></span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p style="font-size: 16px;"><strong>Balgat Campus</strong></p>
+                        <p style="font-family: 'Roboto';">Çukurambar Mah.</p>
+                        <p style="font-family: 'Roboto';">Öğretmenler Cad. No:14</p>
+                        <p style="font-family: 'Roboto';">06530, Çankaya/ANKARA</p>
+                        <p style="font-family: 'Roboto';" class="mt-3"><strong>Phone:</strong> <span>0 312 284 45
+                                00</span></p>
+                        <p style="font-family: 'Roboto';"><strong>Fax:</strong> <span>0 312 286 40
+                                78</span></p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <br><br><br>
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="detection">Detect DR</a></li>
+                        <li><a href="reports">Previous Detections</a></li>
+                        <li><a href="profile">Profile</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">RetinAI</strong> <span>All Rights Reserved</span>
+            </p>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document)
+            .ready(
+                function () {
+                    // Hasta türüne göre ek alanları göster/gizle
+                    $('input[name="patientType"]').change(function () {
+                        if ($(this).val() === 'other') {
+                            $('#otherPatientInfo').slideDown();
+                            $('#otherPatientInfo input').attr('required', true); // inputlara required ekle
+                        } else {
+                            $('#otherPatientInfo').slideUp();
+                            $('#otherPatientInfo input').removeAttr('required'); // required'ları kaldır
+                        }
+                    });
+
+                    // Dosya seçme işlemi
+                    $("#imageUpload")
+                        .change(
+                            function () {
+                                let files = this.files;
+                                let previewContainer = $("#previewContainer");
+                                previewContainer.html(""); // Önceki önizlemeleri temizle
+
+                                if (files.length > 3) {
+                                    alert("You can only upload up to 3 images.");
+                                    this.value = ""; // Fazla dosya seçildiyse sıfırla
+                                    return;
+                                }
+
+                                for (let i = 0; i < files.length; i++) {
+                                    let reader = new FileReader();
+                                    reader.onload = function (e) {
+                                        let img = $("<img>")
+                                            .attr(
+                                                "src",
+                                                e.target.result)
+                                            .addClass(
+                                                "img-thumbnail m-2")
+                                            .css("width",
+                                                "100px");
+                                        previewContainer
+                                            .append(img);
+                                    };
+                                    reader
+                                        .readAsDataURL(files[i]);
+                                }
+                            });
+                });
+    </script>
+</body>
+
+</html>

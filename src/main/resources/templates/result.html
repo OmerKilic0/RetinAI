@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>RetinAI - Your Report</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="/images/logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/assets/css/main.css" rel="stylesheet">
+  <style>
+    .row img {
+      display: flex;
+      position: inherit;
+
+    }
+  </style>
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@example.com">info@example.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+90 312 233 10 00</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="/" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1 class="sitename fs-1">RetinAI</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+
+        <a class="cta-btn d-none d-sm-block"
+          style="font-size:16px; min-width: 210px; max-width: 210px; text-align: center;" href="/detection">Detect
+          DR</a>
+        <a class="cta-btn d-none d-sm-block"
+          style="font-size:16px; text-align:center; min-width: 240px; max-width: 240px;" href="/reports">Previous
+          Detections</a>
+        <a class="cta-btn d-none d-sm-block"
+          style="font-size:16px; text-align:center; min-width: 210px; max-width: 200px;" href="/profile">Profile</a>
+
+        <form th:action="@{/logout}" method="post" style="margin:0;">
+          <button type="submit" class="cta-btn d-none d-sm-block"
+            style="font-size:16px; text-align:center; min-width: 200px; max-width: 200px; border: none;">
+            Log Out
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <img src="/images/result-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative">
+
+        <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+          <h2 style="font-size: 36px;">Your Report</h2>
+        </div><!-- End Welcome -->
+
+        <div class="content row gy-4 justify-content-start" style="margin-top: 20px;">
+
+          <div class="icon-box" data-aos="zoom-out" data-aos-delay="500"
+            style="padding: 40px 30px; max-width: 100%; min-height: 500px; text-align: start;">
+
+            <div class="card shadow p-4" style="min-height: 400px;" data-aos="zoom-in">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="mb-0" style="font-size: 30px;">Diabetic Retinopathy Result</h4>
+                <p class="mb-0 text-muted" style="font-size: 24px;">
+                  <strong>Report Created:</strong>
+                  <span th:text="${#dates.format(report.requestDate, 'dd-MM-yyyy HH:mm')}">01-01-2024 12:00</span>
+                </p>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4 d-flex flex-column gap-3 align-items-start" style="max-width: 120px;">
+                  <img th:each="img : ${base64Images}" th:src="${img}" alt="Retina Image" class="img-thumbnail"
+                    style="min-width: 100px; max-height: 100px;" />
+                </div>
+
+                <div class="col-md-8" style="margin-left: 10px; width: 1050px;">
+                  <p style="font-size: 22px; width: 100%;"><strong>Name:</strong> <span
+                      th:text="${report.patientName}">John</span> &emsp; <strong>Surname:</strong> <span
+                      th:text="${report.patientSurname}">Doe</span> &emsp; <strong>TCKN:</strong> <span
+                      th:text="${report.patientTckn}">12345678900</span>
+                  </p>
+                  <p style="font-size: 22px;"><strong>Result:</strong><span th:text="${report.resultSentence}">DR with
+                      87.43% probability.</span></p>
+                  <p style="font-size: 22px;"><strong>Severity:</strong> <span
+                      th:text="${report.resultDrLevel}">Moderate</span></p>
+                  <div style="display: flex; gap: 40px; align-items: center; justify-content: center;">
+                    <canvas id="drPieChart" style="max-width: 369px; max-height: 246px;"></canvas>
+                    <canvas id="severityChart" style="max-width: 462px; max-height: 307px;"></canvas>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+              <button class="download-button"
+                style="background-color: #1977cc; font-size:20px; border-radius: 5px; min-width: 210px; max-width: 210px; text-align: center; color: white; border: none; min-width: 225px; min-height: 50px;"
+                th:onclick="'downloadPDF(' + ${report.id} + ')'">
+                📥 Download as PDF
+              </button>
+            </div>
+
+          </div>
+        </div><!-- End Content -->
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4 justify-content-center">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="/" class="logo d-flex align-items-center">
+            <span class="sitename">RetinAI</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p style="font-size: 16px;"><strong>Central Campus</strong></p>
+            <p style="font-family: 'Roboto';">Eskişehir Yolu 29. Km.</p>
+            <p style="font-family: 'Roboto';">Yukarıyurtçu Mahallesi</p>
+            <p style="font-family: 'Roboto';">Mimar Sinan Caddesi No:4</p>
+            <p style="font-family: 'Roboto';">06815, Etimesgut/ANKARA</p>
+            <p style="font-family: 'Roboto';" class="mt-3"><strong>Phone:</strong> <span>0 312 233 10
+                00</span></p>
+            <p style="font-family: 'Roboto';"><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a class="logo d-flex align-items-center">
+            <span class="sitename"><br></span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p style="font-size: 16px;"><strong>Balgat Campus</strong></p>
+            <p style="font-family: 'Roboto';">Çukurambar Mah.</p>
+            <p style="font-family: 'Roboto';">Öğretmenler Cad. No:14</p>
+            <p style="font-family: 'Roboto';">06530, Çankaya/ANKARA</p>
+            <p style="font-family: 'Roboto';" class="mt-3"><strong>Phone:</strong> <span>0 312 284 45
+                00</span></p>
+            <p style="font-family: 'Roboto';"><strong>Fax:</strong> <span>0 312 286 40
+                78</span></p>
+
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <br><br><br>
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="/detection">Detect DR</a></li>
+            <li><a href="/reports">Previous Detections</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">RetinAI</strong> <span>All Rights Reserved</span>
+      </p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/assets/js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".filter-button").click(function () {
+        $("#filter-contents").slideToggle();
+      });
+    })
+    function downloadPDF(reportId) {
+      fetch('/generate-pdf', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ reportId: reportId }) // Sadece ID gönderiyoruz
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("PDF generation failed");
+          }
+          return response.blob();
+        })
+        .then(blob => {
+          let link = document.createElement('a');
+          link.href = window.URL.createObjectURL(blob);
+          link.download = "Retina_Report.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+  <script th:inline="javascript">
+    let severityProbs = JSON.parse(/*[[${report.severityDistribution}]]*/ '[]');
+    let severityPercents = severityProbs.map(p => (p * 100).toFixed(2));
+</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const ctx = document.getElementById('severityChart').getContext('2d');
+      const data = {
+        labels: ['No DR', 'Mild', 'Moderate', 'Severe', 'Proliferative'],
+        datasets: [{
+          label: '% Probability',
+          data: severityPercents,
+          backgroundColor: ['#2ecc71', '#f1c40f', '#f39c12', '#e67e22', '#e74c3c'],
+          borderRadius: 5,
+          maxBarThickness: 60
+        }]
+      };
+      const options = {
+
+        animation: {
+          duration: 5000,
+          animations: {
+            y: {
+              from: 0
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            title: {
+              display: true,
+              text: 'Percentage (%)',
+              font: {
+                weight: 'bold',
+                size: 16
+              }
+            },
+            ticks: {
+              font: {
+                weight: 'bold',
+                size: 16
+              }
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Predicted DR Severity Levels',
+              font: {
+                weight: 'bold',
+                size: 16
+              }
+            },
+            ticks: {
+              font: {
+                weight: 'bold',
+                size: 12
+              }
+            }
+          },
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => ctx.parsed.y + '%'
+            }
+          }
+        }
+      };
+      new Chart(ctx, { type: 'bar', data, options });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const pieCtx = document.getElementById('drPieChart').getContext('2d');
+
+      const noDrValue = severityPercents[0];
+      const drValue = +(100 - noDrValue).toFixed(2);
+
+      const pieData = {
+        labels: ['No DR', 'DR'],
+        datasets: [{
+          data: [noDrValue, drValue],
+          backgroundColor: ['#2ecc71', '#e74c3c'],
+          borderWidth: 0,
+          hoverOffset: 10
+        }]
+      };
+
+      const pieOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: '#444444',
+              boxWidth: 12,
+              padding: 20,
+              font: {
+                weight: 'bold',
+                size: 14
+              },
+              generateLabels: function (chart) {
+                const data = chart.data;
+                const dataset = data.datasets[0];
+                return data.labels.map((label, i) => {
+                  const value = dataset.data[i];
+                  return {
+                    text: `${label}: ${value}%`,
+                    fillStyle: dataset.backgroundColor[i],
+                    strokeStyle: dataset.backgroundColor[i],
+                    fontColor: '#888888',
+                    index: i
+                  };
+                });
+              }
+            }
+          },
+
+          tooltip: {
+            callbacks: {
+              label: ctx => ctx.label + ': ' + ctx.parsed + '%'
+            }
+          }
+        },
+        animation: {
+          animateRotate: true,
+          duration: 3000
+        },
+        cutout: '50%'
+      };
+
+      new Chart(pieCtx, { type: 'doughnut', data: pieData, options: pieOptions });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>

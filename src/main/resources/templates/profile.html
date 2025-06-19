@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>RetinAI - Profile</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+    <style>
+        input {
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            font-size: 16px;
+            min-height: 48px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .filter-button {
+            background-color: #1977cc;
+            border: none;
+            padding: 10px 20px;
+            align-items: center;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+        }
+
+        #saveButton:disabled {
+            background-color: #ccc !important;
+            cursor: not-allowed;
+        }
+
+        .filter-submit {
+            margin: 0 0 8px 30px;
+            background-color: #1977cc;
+            /* Orta mavi filtre gönder */
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        a:link,
+        a:visited {
+
+            /* Açık mavi link */
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: start;
+            font-size: 20px;
+
+        }
+
+        .view-button,
+        .download-button {
+            background-color: #1977cc;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        th {
+            background-color: #1977cc;
+            color: white;
+            font-weight: normal;
+        }
+
+        td img {
+            width: 80px;
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header sticky-top">
+
+        <div class="topbar d-flex align-items-center">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+                <div class="contact-info d-flex align-items-center">
+                    <i class="bi bi-envelope d-flex align-items-center"><a
+                            href="mailto:info@example.com">info@example.com</a></i>
+                    <i class="bi bi-phone d-flex align-items-center ms-4"><span>+90 312 233 10 00</span></i>
+                </div>
+                <div class="social-links d-none d-md-flex align-items-center">
+                    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div><!-- End Top Bar -->
+
+        <div class="branding d-flex align-items-center">
+
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+                <a href="/" class="logo d-flex align-items-center me-auto">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.png" alt=""> -->
+                    <h1 class="sitename fs-1" style="background-color: white;">RetinAI</h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+
+                <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; min-width: 210px; max-width: 210px; text-align: center;" href="detection">Detect DR</a>
+		  <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; text-align:center; min-width: 240px; max-width: 240px;" href="reports">Previous Detections</a>
+		  <a class="cta-btn d-none d-sm-block"
+		     style="font-size:16px; text-align:center; min-width: 210px; max-width: 200px;" href="profile">Profile</a>
+		
+		  <form th:action="@{/logout}" method="post" style="margin:0;">
+		    <button type="submit" class="cta-btn d-none d-sm-block"
+		            style="font-size:16px; text-align:center; min-width: 200px; max-width: 200px; border: none;">
+		      Log Out
+		    </button>
+		  </form>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="main">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero section light-background" style="align-items: flex-start;">
+
+            <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+
+            <div class="container mt-4" style="opacity: 0.95;">
+                <div class="p-4 shadow rounded" style="background-color: white; border: 1px solid #ddd;">
+                    <h3 class="fw-bold mb-4 text-start" style="font-size: 36px;">Personal
+                        Information</h3>
+                    <div class="row align-items-center">
+                        <!-- Sol: İkon -->
+                        <div class="col-md-4 text-center justify-content-center" style="display: flex;">
+                            <img src="/images/user-icon.png" alt="Profil Fotoğrafı" class="img-fluid rounded-circle"
+                                style="position: relative; margin-bottom: 50px; max-height: 250px; max-width: 250px; object-fit: cover;">
+                        </div>
+
+                        <!-- Sağ: Bilgi Formu -->
+                        <div class="col-md-8">
+							<div th:if="${errorMessage}" class="alert alert-danger d-flex align-items-center" role="alert"
+						     style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; border: 1px solid #f5c6cb; margin-bottom: 20px;">
+						  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+						       class="bi bi-exclamation-triangle-fill me-2" viewBox="0 0 16 16">
+						    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.964 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.706c.89 0 1.438-.99.982-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1-2.002 0 1 1 0 0 1 2.002 0z"/>
+						  </svg>
+						  <div th:text="${errorMessage}">An error occurred</div>
+						</div>
+						
+						<div th:if="${successMessage}" class="alert alert-success d-flex align-items-center" role="alert"
+						     style="background-color: #d4edda; color: #155724; padding: 15px; border-radius: 5px; border: 1px solid #c3e6cb; margin-bottom: 20px;">
+						  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+						       class="bi bi-check-circle-fill me-2" viewBox="0 0 16 16">
+						    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.97 11.03a.75.75 0 0 0 1.07 0l3.992-3.992a.75.75 0 1 0-1.06-1.06L7.5 9.44 6.53 8.47a.75.75 0 0 0-1.06 1.06l1.5 1.5z"/>
+						  </svg>
+						  <div th:text="${successMessage}">Operation successful</div>
+						</div>
+                            <form th:action="@{/update-profile}" method="post" id="profileForm">
+							  <div class="row mb-3">
+							    <div class="col-md-6">
+							      <label for="name" class="form-label">Name</label>
+							      <input type="text" class="form-control" id="name" name="name" th:value="${profile.name}" readonly>
+							    </div>
+							    <div class="col-md-6">
+							      <label for="surname" class="form-label">Surname</label>
+							      <input type="text" class="form-control" id="surname" name="surname" th:value="${profile.surname}" readonly>
+							    </div>
+							  </div>
+							
+							  <div class="row mb-3">
+							    <div class="col-md-6">
+							      <label for="tckn" class="form-label">T.C. Identity Number</label>
+							      <input type="text" class="form-control" id="tckn" name="tckn" th:value="${profile.tckn}" readonly>
+							    </div>
+							    <div class="col-md-6">
+							      <label for="email" class="form-label">Email Address</label>
+							      <input type="email" class="form-control" id="email" name="email" th:value="${profile.email}" readonly>
+							    </div>
+							  </div>
+							  
+							  <div class="mb-3">
+							    <label for="password" class="form-label">Password</label>
+							    <div class="d-flex align-items-center gap-3">
+							      <input type="password" class="form-control" value="********" readonly disabled>
+							    </div>
+							  </div>
+							
+							  <div id="passwordFields" style="display: none;">
+							    <div class="mb-3">
+							      <label for="oldPassword" class="form-label">Old Password</label>
+							      <input type="password" class="form-control" id="oldPassword" name="oldPassword" disabled>
+							    </div>
+							    <div class="mb-3">
+							      <label for="newPassword" class="form-label">New Password</label>
+							      <input type="password" class="form-control" id="newPassword" name="newPassword" disabled>
+							    </div>
+							  </div>
+							
+							  <div class="d-flex gap-3">
+							    <div class="text-end">
+								  <button type="button" id="editButton" class="btn btn-primary" onclick="enableEditing()">Update Profile</button>
+								  <button type="submit" id="saveButton" class="btn btn-primary" style="display: none;">Save</button>
+								</div>
+							  </div>
+							</form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Hero Section -->
+
+    </main>
+
+    <footer id="footer" class="footer light-background">
+
+        <div class="container footer-top">
+            <div class="row gy-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="/" class="logo d-flex align-items-center">
+                        <span class="sitename">RetinAI</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p style="font-size: 16px;"><strong>Central Campus</strong></p>
+                        <p style="font-family: 'Roboto';">Eskişehir Yolu 29. Km.</p>
+                        <p style="font-family: 'Roboto';">Yukarıyurtçu Mahallesi</p>
+                        <p style="font-family: 'Roboto';">Mimar Sinan Caddesi No:4</p>
+                        <p style="font-family: 'Roboto';">06815, Etimesgut/ANKARA</p>
+                        <p style="font-family: 'Roboto';" class="mt-3"><strong>Phone:</strong> <span>0 312 233 10
+                                00</span></p>
+                        <p style="font-family: 'Roboto';"><strong>Email:</strong> <span>info@example.com</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a class="logo d-flex align-items-center">
+                        <span class="sitename"><br></span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p style="font-size: 16px;"><strong>Balgat Campus</strong></p>
+                        <p style="font-family: 'Roboto';">Çukurambar Mah.</p>
+                        <p style="font-family: 'Roboto';">Öğretmenler Cad. No:14</p>
+                        <p style="font-family: 'Roboto';">06530, Çankaya/ANKARA</p>
+                        <p style="font-family: 'Roboto';" class="mt-3"><strong>Phone:</strong> <span>0 312 284 45
+                                00</span></p>
+                        <p style="font-family: 'Roboto';"><strong>Fax:</strong> <span>0 312 286 40
+                                78</span></p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <br><br><br>
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="detection">Detect DR</a></li>
+                        <li><a href="reports">Previous Detections</a></li>
+                        <li><a href="profile">Profile</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">RetinAI</strong> <span>All Rights Reserved</span>
+            </p>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            const originalValues = {
+                name: $("#name").val(),
+                surname: $("#surname").val(),
+                blood: $("#blood").val(),
+                password: $("#password").val()
+            };
+
+            function checkChanges() {
+                const currentValues = {
+                    name: $("#name").val(),
+                    surname: $("#surname").val(),
+                    blood: $("#blood").val(),
+                    password: $("#password").val()
+                };
+
+                const hasChanged = Object.keys(originalValues).some(key => originalValues[key] !== currentValues[key]);
+
+                const saveBtn = $("#saveButton");
+                saveBtn.prop("disabled", !hasChanged);
+                saveBtn.css("background-color", hasChanged ? "#1977cc" : "#ccc");
+            }
+
+            $("#name, #surname, #blood, #password").on("input change", checkChanges);
+        });
+    </script>
+	
+	<script>
+	  function enableEditing() {
+	    document.getElementById('name').removeAttribute('readonly');
+	    document.getElementById('surname').removeAttribute('readonly');
+	    document.getElementById('oldPassword').removeAttribute('disabled');
+	    document.getElementById('newPassword').removeAttribute('disabled');
+	    document.getElementById('passwordFields').style.display = 'block';
+	    document.getElementById('editButton').style.display = 'none';
+    	document.getElementById('saveButton').style.display = 'inline-block';
+	  }
+	</script>
+	
+	<script>
+	  window.addEventListener("DOMContentLoaded", () => {
+	    const messages = document.querySelectorAll('.alert');
+	    messages.forEach(msg => {
+	      setTimeout(() => {
+	        msg.style.transition = "opacity 1s";
+	        msg.style.opacity = 0;
+	        setTimeout(() => msg.remove(), 1000);
+	      }, 5000);
+	    });
+	  });
+	</script>
+
+    <script>
+        $(document)
+            .ready(
+                function () {
+                    // Hasta türüne göre ek alanları göster/gizle
+                    $('input[name="patientType"]').change(function () {
+                        if ($(this).val() === 'other') {
+                            $('#otherPatientInfo').slideDown();
+                            $('#otherPatientInfo input').attr('required', true); // inputlara required ekle
+                        } else {
+                            $('#otherPatientInfo').slideUp();
+                            $('#otherPatientInfo input').removeAttr('required'); // required'ları kaldır
+                        }
+                    });
+
+                    // Dosya seçme işlemi
+                    $("#imageUpload")
+                        .change(
+                            function () {
+                                let files = this.files;
+                                let previewContainer = $("#previewContainer");
+                                previewContainer.html(""); // Önceki önizlemeleri temizle
+
+                                if (files.length > 3) {
+                                    alert("You can only upload up to 3 images.");
+                                    this.value = ""; // Fazla dosya seçildiyse sıfırla
+                                    return;
+                                }
+
+                                for (let i = 0; i < files.length; i++) {
+                                    let reader = new FileReader();
+                                    reader.onload = function (e) {
+                                        let img = $("<img>")
+                                            .attr(
+                                                "src",
+                                                e.target.result)
+                                            .addClass(
+                                                "img-thumbnail m-2")
+                                            .css("width",
+                                                "100px");
+                                        previewContainer
+                                            .append(img);
+                                    };
+                                    reader
+                                        .readAsDataURL(files[i]);
+                                }
+                            });
+                });
+    </script>
+</body>
+
+</html>
